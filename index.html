@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- viewport por defecto
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  -->
+  <!-- viewport MagtimusPro-->
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no ,initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
+
+  <title>Luiggi LLontop - Blog</title>
+  <!-- googlefonts - Lato - Libre Baskerville-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <!-- fontawesome-->
+  <script src="https://kit.fontawesome.com/f7c313680c.js" crossorigin="anonymous"></script>
+  <!-- prism-->
+  <link rel="stylesheet" href="css/prism.css">
+  <!-- estilos-->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="contenedor">
+  <header class="cabecera">
+    <h1>
+      <a href="#">Luiggi Llontop</a>
+    </h1>
+    <h2>
+      Un poco de codigo y experiencias...
+    </h2>
+  </header>
+
+  <div class="navigator">
+    <nav>
+      <a href="#"> Blog </a>
+      <span class="separador">|</span>
+      <a href="#"> Archivo </a>
+      <span class="separador">|</span>
+      <a href="#"> Sobre mi </a>
+      <span class="separador">|</span>
+      <a href="#"> Contacto </a>
+    </nav>
+  </div>
+
+  <main class="contenido">
+
+    <div class="articulos">
+
+      <article class="articulo">
+        <span class="fecha">28 MAR, 2022</span>
+
+        <h3>Sobre cajas y prácticas</h3>
+        <hr>
+        <div class="cita">
+          <div class="icono-cita">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <div class="cita-texto">
+            <cite>Quien no añade nada a sus conocimientos, los disminuye.</cite>
+          </div>
+          <p class="autor">El Talmud</p>
+        </div>
+
+        <p>En mis inicios con la programación web me encontré con un problema. </p>
+        <p>Por ejemplo: si inserto una imagen y le pongo un <b>width</b> 200px, en realidad no ocupa 200px sino que se
+          suman los valores por defecto del <b>margin</b> y el <b>padding</b> por poner algunos.</p>
+
+        <p>Sabemos que los navegadores además de las hojas de estilo que podamos agregar, le asignan <a
+            href="https://www.w3schools.com/cssref/css_default_values.asp">valores por defecto</a>
+          a distintos atributos </p>
+
+        <p>Esto se debe al “modelo de caja” predeterminado, en donde el tamaño <b>width</b> incluye solo la parte
+          visible del elemento</p>
+
+        <div class="imagen center">
+          <img class="archivo-imagen" src="assets/modelbox.png" alt="modelo de caja">
+        </div>
+
+        <p>Una recomendación para corregir esto es desde CSS:</p>
+        
+        <pre>
+          <code class="language-css line-numbers" data-start="1">
+html {
+  box-sizing: border-box;
+  
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+</code>
+</pre>
+        <p>Ademas aunque todos los navegadores coinciden en algunos valores importantes (tipo de letra serif, color de
+          letra negro, etc.) presentan diferencias en valores tan importantes como los
+          márgenes verticales (margin-bottom y margin-top) de los títulos de sección (h1, ...h6), la tabulación
+          izquierda de los elementos de las listas
+          (margin-left o padding-left según el navegador) y el tamaño de línea del texto
+          (line-height).</p>
+
+        <div class="imagen center">
+          <img class="archivo-imagen" src="assets/diferencia navegadores.JPG" alt="diferencia navegadores">
+        </div>
+
+        <p>Para solucionar esto ultimo se ve mucho que aplican:</p>
+
+        <pre>
+          <code class="language-css line-numbers" data-start="1">
+* {
+  margin:  0;
+  padding: 0;
+}        
+          </code>
+        </pre>
+
+        <p>Pero el intento es limitado, la solución completa consiste en crear una hoja de estilos CSS que “normalice”
+          todos los estilos que aplican por defecto los navegadores y que pueden afectar al aspecto visual de las
+          páginas. Este tipo de hojas de estilos se suelen llamar <em>"reset CSS"</em>.</p>
+
+        <p>Un gran ejemplo de esto y la recomendación final es <a
+            href="https://necolas.github.io/normalize.css/">nomalize.css</a>. </p>
+
+      </article> <!-- fin articulo-->
+
+
+      <article class="articulo">
+        <span class="fecha">22 MAR, 2022</span>
+
+        <h3>Hello world!</h3>
+        <hr>
+        <div class="cita">
+          <div class="icono-cita">
+            <i class="fa-solid fa-quote-left"></i>
+          </div>
+          <div class="cita-texto">
+            <cite>El viaje de mil millas comienza con un paso</cite>
+          </div>
+          <p class="autor">Lao Tzu</p>
+        </div>
+
+        <div class="imagen center">
+          <img class="archivo-imagen" src="assets/1helloworld.JPG" alt="imagen captura de pantalla hello world">
+        </div>
+
+        <p>Bienvenidos a mi blog, este será el primer artículo de una serie que espero sea larga y que aporte valor.</p>
+
+        <p>
+          Esta travesía empezó en medio de tiempos complicados, para ser exacto el de la pandemia del <b>COVID</b>, si
+          bien
+          tenía un trabajo estable en oficina que muto en home office hasta la fecha que escribo estas líneas, el gran
+          cambio que significo para todos también me afectó negativamente sin darme cuenta adopte malas costumbres
+          alimentarias, productivas, etc. que con el tiempo se manifestaban en un detrimento en mi estado de salud,
+          emocional.</p>
+
+        <p>Fue cuando tomé conciencia de estas cosas que decidí hacer algo por mí mismo, ahondar más en las razones de
+          ello, volver revisar mis metas, cambiar de enfoque, dejar de vivir en piloto automático y empezar a ser
+          protagonista de mi vida, retomar mis pasiones, sumándole mis capacidades, nutrir mis conocimientos y <u>llegar
+            a un nuevo nivel</u>.</p>
+
+        <p>
+          Dentro de las varias cosas que retome es mi pasión por la programación empecé con la programación web y la
+          creación de este blog es uno de los primeros resultados, además que creo que el titulo le viene muy bien.</p>
+
+        <p>
+          Por este medio subiré mis progresos y compartiré experiencias de ello, espero que, sea de su interés y nos lo
+          pasemos bien.
+
+        </p>
+
+      </article>
+
+    </div>
+
+    <div class="container-aside center">
+      <aside>
+        <div class="info-personal">
+          <p>Hi, I’m a <strong>front-end developer</strong>,
+            and work frelance focused on creating solutions and learning new technologies.</p><br>
+          <p>I live in Buenos Aires.</p>
+          <a class="negrita" href="#">Contact me</a> or <a class="negrita" href="#">Read more about me</a>
+
+          <div class="imagen center">
+            <img class="foto-personal archivo-imagen" src="assets/perfil.jpg" alt="foto Luiggi Llontop">
+
+          </div>
+          <a class="center" href="#">Follow @luiggillo</a>
+        </div>
+
+      </aside>
+    </div>
+
+  </main>
+
+  <div class="container-footer">
+    <footer>
+      <span>
+        Redes Sociales
+      </span>
+      <div class="redes-footer">
+        <a href="#"><i class="fa-brands fa-linkedin-in icon-redes-footer"></i></a>
+        <a href="#"><i class="fa-brands fa-github icon-redes-footer"></i></a>
+        <a href="#"><i class="fa-brands fa-figma icon-redes-footer"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter icon-redes-footer"></i></a>
+      </div>
+      <hr>
+
+      <h4>2022 - Design by Luiggi Llontop</h4>
+    </footer>
+
+  </div>
+  <script src="./js/prism.js"></script>
+</body>
+
+</html>

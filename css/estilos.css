@@ -1,0 +1,262 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+:root{  
+  --fuente: 'Lato';
+  --fuente-secundaria:'Libre Baskerville';
+  --color-fondo-body: #BEC3C6;
+  --color-fondo-cabecera: #333333;
+  --gradiente: linear-gradient(#e0e0e0,#cccccc,#b0b0b0);
+--gris-claro:#f2f2f2;
+--gris:#aaaaaa;
+--gris-oscuro: #6b6b6b;
+--verde: #29aa29;
+--negro: #000;
+--blanco: #fff;
+--azul:#0e5fbd;
+--azul-marino: #2500cc;
+
+}
+html {
+  font-size: 62.5%; /* util para el manejo con rem*/
+  box-sizing: border-box;
+  
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+body{
+font-family: var(--fuente), var(--fuente-secundaria), serif;
+background-color: var(--color-fondo-body);
+font-size: 16px; /* 1rem = 10px*/
+
+}
+
+a{  
+  text-decoration: none;
+}
+
+
+
+.cabecera{
+  background-color: var(--color-fondo-cabecera);
+  padding: 3rem;
+}
+
+h1 a{
+color: var(--gris-claro);
+font-size: 4.5rem;
+font-weight: 600;
+}
+h2:hover{
+  color: var(--gris-oscuro);
+}
+h2{
+  color: var(--gris);
+  font-weight: 500;
+  font-size: 1.9rem; 
+}
+h3, h4{
+  color: var(--verde);
+}
+
+
+.navigator{
+  background: url(../assets/noise.png), var(--gradiente);
+  display: flex;
+  padding: 1rem;
+  color: var(--gris-oscuro);
+  border-bottom: 1px solid var(--gris-oscuro);
+  border-top: 1px solid var(--blanco);
+}
+
+
+.navigator a{
+color: var(--gris-oscuro);
+padding: 0 2rem;
+font-size: 1.5rem;
+}
+.navigator a:hover{
+  color: var(--negro);
+}
+
+.contenido{
+  padding: 3rem;
+  background-color: var(--gris-claro);
+  display: flex;
+  justify-content: center;
+}
+.articulo{
+  padding: 2rem 0px;
+  border-bottom: 2px solid var(--color-fondo-cabecera);
+}
+.articulo h3{
+  font-size: 2.6rem;
+  padding-bottom: 1rem;
+}
+.articulo a{
+  color: var(--azul);
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.cita{
+  margin-top: 1rem;  
+  background: rgb(224, 224, 224);
+  border-radius: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 6fr .5fr;
+  grid-template-rows: .5fr auto 1fr;
+
+}
+.cita .icono-cita{
+  font-size: 6rem;
+  grid-column: 1;
+  grid-row: 2;
+  color: var(--gris-claro);
+  margin-left: 3rem;
+ 
+}
+
+.cita .cita-texto{  
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: var(--negro);
+  grid-column: 2 ;
+  grid-row: 2 ;
+  align-self: center;
+  justify-self: center;
+}
+.cita .autor{  
+  color: var(--azul-marino);
+  grid-column: 1/ 4;
+  grid-row: 3;
+  margin: .5rem 2rem;
+  text-align: end;
+  align-self: end;
+}
+
+.articulo .fecha{  
+  font-weight: 600;
+  color: var(--gris-oscuro);
+}
+.articulo p{
+  line-height: 2;
+}
+.imagen{
+  padding: 2rem;
+}
+
+.articulo .archivo-imagen{
+  padding: 1rem;
+  border: 1px solid var(--gris);
+  border-radius: 1rem;
+  max-width: 100%;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.negrita{
+  font-weight: 600 ;
+}
+.container-aside aside{
+  background-color: rgba(0, 0, 0, 0.048);
+  width: 28rem ;
+  padding: 2rem;
+  border-radius: 6px; 
+  border: 1px solid var(--gris);
+  margin-left: 3rem;
+  margin-top: 2rem;
+  align-self: flex-start;
+  text-align: center;
+}
+
+.container-aside .foto-personal{
+  width: 50%;
+  border-radius: 50%;
+  
+}
+.container-aside p{
+  font-size: 1.5rem;
+}
+
+.container-footer{
+  width: 100%;
+  padding: 4rem 0px;
+  text-align: center;  
+  color: var(--gris);
+  background: url(../assets/noise.png),var(--gradiente);
+}
+.container-footer footer{
+  max-width: 80rem;
+  margin: auto;
+}
+.container-footer span{
+  color: var(--gris-oscuro);
+}
+.container-footer footer .redes-footer{
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.container-footer footer .redes-footer .icon-redes-footer{
+  font-size: 2.8rem;
+  margin: 2rem;
+ 
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: var(--gris-oscuro);
+}
+
+.container-footer footer hr{
+  margin-top: 2rem;
+  border: none;
+  height: 2px;
+  background: var(--gris);
+
+}
+.container-footer footer h4{
+  font-weight: 300;
+  color: var(--gris-oscuro);
+  padding-top: 3rem;
+}
+.container-footer footer .redes-footer .icon-redes-footer:hover{
+  color: var(--gris-claro);
+}
+
+/* responsive desing min resolucion 290 px*/
+
+@media (max-width: 865px) {
+
+  .contenido{
+    display: block;
+  }
+  .navigator{
+    justify-content: center;
+    padding: 1rem 0rem;
+  }
+  .navigator a{
+    padding: 0 1rem;
+  }
+  .separador{
+    display: none;
+  }   
+  
+}
+
+@media (min-width: 1024px) {
+  .contenedor{
+  margin: 0 10%;
+  
+  }
+}
