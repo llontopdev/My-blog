@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-ES">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="description" content="Blog de Luiggi Llontop">
+  <meta name="Author" content="Luiggi llontop">
+
   <!-- viewport por defecto
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   -->
@@ -11,7 +15,8 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no ,initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0">
 
-  <title>Luiggi LLontop - Blog</title>
+
+  <title>Luiggi Llontop - Blog</title>
   <!-- googlefonts - Lato - Libre Baskerville-->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +34,7 @@
 <body class="contenedor">
   <header class="cabecera">
     <h1>
-      <a href="#">Luiggi Llontop</a>
+      <a href="https://llontopdev.github.io/My-blog/">Luiggi Llontop</a>
     </h1>
     <h2>
       Un poco de codigo y experiencias...
@@ -82,14 +87,25 @@
           <img class="archivo-imagen" src="assets/modelbox.png" alt="modelo de caja">
         </div>
 
-        <p>Una recomendación para corregir esto es desde CSS:</p>
-        
+        <p>Ademas aunque todos los navegadores coinciden en algunos valores importantes (tipo de letra serif, color de
+          letra negro, etc.) presentan diferencias en valores tan importantes como los márgenes verticales
+          (margin-bottom y margin-top) de los títulos de sección (h1, ...h6), la tabulación
+          izquierda de los elementos de las listas (margin-left o padding-left según el navegador) y el tamaño de línea
+          del texto
+          (line-height).</p>
+
+        <div class="imagen center">
+          <img class="archivo-imagen" src="assets/diferencia navegadores.JPG" alt="diferencia navegadores">
+        </div>
+
+        <p>Una recomendación para corregir esto desde CSS seria:</p>
+
         <pre>
           <code class="language-css line-numbers" data-start="1">
 html {
-  box-sizing: border-box;
-  
+  box-sizing: border-box;    
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
   margin: 0;
@@ -97,29 +113,8 @@ html {
 }
 </code>
 </pre>
-        <p>Ademas aunque todos los navegadores coinciden en algunos valores importantes (tipo de letra serif, color de
-          letra negro, etc.) presentan diferencias en valores tan importantes como los
-          márgenes verticales (margin-bottom y margin-top) de los títulos de sección (h1, ...h6), la tabulación
-          izquierda de los elementos de las listas
-          (margin-left o padding-left según el navegador) y el tamaño de línea del texto
-          (line-height).</p>
 
-        <div class="imagen center">
-          <img class="archivo-imagen" src="assets/diferencia navegadores.JPG" alt="diferencia navegadores">
-        </div>
-
-        <p>Para solucionar esto ultimo se ve mucho que aplican:</p>
-
-        <pre>
-          <code class="language-css line-numbers" data-start="1">
-* {
-  margin:  0;
-  padding: 0;
-}        
-          </code>
-        </pre>
-
-        <p>Pero el intento es limitado, la solución completa consiste en crear una hoja de estilos CSS que “normalice”
+        <p>Otra la solución consiste en crear una hoja de estilos CSS que “normalice”
           todos los estilos que aplican por defecto los navegadores y que pueden afectar al aspecto visual de las
           páginas. Este tipo de hojas de estilos se suelen llamar <em>"reset CSS"</em>.</p>
 
@@ -189,7 +184,7 @@ html {
             <img class="foto-personal archivo-imagen" src="assets/perfil.jpg" alt="foto Luiggi Llontop">
 
           </div>
-          <a class="center" href="#">Follow @luiggillo</a>
+          <a class="center" href="#">Follow @twitter</a>
         </div>
 
       </aside>
@@ -203,9 +198,10 @@ html {
         Redes Sociales
       </span>
       <div class="redes-footer">
-        <a href="#"><i class="fa-brands fa-linkedin-in icon-redes-footer"></i></a>
-        <a href="#"><i class="fa-brands fa-github icon-redes-footer"></i></a>
-        <a href="#"><i class="fa-brands fa-figma icon-redes-footer"></i></a>
+        <a href="https://www.linkedin.com/in/luel184/"><i class="fa-brands fa-linkedin-in icon-redes-footer"></i></a>
+        <a href="https://github.com/llontopdev"><i class="fa-brands fa-github icon-redes-footer"></i></a>
+        <a href="https://www.figma.com/file/p7xDZKkeUlrhVIXWxUbHId/Primeros-pasos-en-Figma"><i
+            class="fa-brands fa-figma icon-redes-footer"></i></a>
         <a href="#"><i class="fa-brands fa-twitter icon-redes-footer"></i></a>
       </div>
       <hr>
@@ -214,7 +210,9 @@ html {
     </footer>
 
   </div>
+
   <script src="./js/prism.js"></script>
+
 </body>
 
 </html>
